@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tugas 2 Kalkulator JS</title>
+    <script type="text/javascript">
+        function cek() {
+            if (form.angka1.value == "" || form.angka2.value == "") {
+                alert("data kosong");
+                exit;
+            }
+        }
+
+        function cek2() {
+            if (form.angka1.value == "" || form.angka2.value == "" || form.total.value == "") {
+                alert("data kosong");
+                exit;
+            }
+        }
+
+
+        function tambah() {
+            cek();
+            a = eval(form.angka1.value);
+            b = eval(form.angka2.value);
+            c = a + b
+            form.total.value = c;
+        }
+
+        function kali() {
+            cek();
+            a = eval(form.angka1.value);
+            b = eval(form.angka2.value);
+            c = a * b
+            form.total.value = c;
+        }
+
+        function kurang() {
+            cek();
+            a = eval(form.angka1.value);
+            b = eval(form.angka2.value);
+            c = a - b
+            form.total.value = c;
+        }
+
+        function bagi() {
+            cek();
+            a = eval(form.angka1.value);
+            b = eval(form.angka2.value);
+            c = a / b
+            form.total.value = c;
+        }
+
+        function reset() {
+            form.angka1.value = "";
+            form.angka2.value = "";
+            form.total.value = "";
+        }
+
+        function ganjilGenap() {
+            cek2();
+            if (form.total.value % 2 == 0) {
+                result = "Bilangan Genap"
+            } else {
+                result = "Bilangan Ganjil";
+            }
+            alert(form.total.value + " " + result)
+        }
+    </script>
+</head>
+
+<body>
+    <form name="form">
+        Angka1
+        <input type="text" name="angka1" size=3><br><br>
+        Angka2
+        <input type="text" name="angka2" size="3" /><br>
+        <br>
+        Hasil <input type="text" value="" name="total" size="9">
+        <br><br>
+        <!-- ini tombol untuk function javascript -->
+        <input type="button" name="submit" onclick="tambah()" value="+">
+        <input type="button" name="submit" onclick="kali()" value="X">
+        <input type="button" name="submit" onclick="bagi()" value="/">
+        <input type="button" name="submit" onclick="kurang()" value="-">
+        <input type="button" name="submit" onclick="reset()" value="Reset">
+        <input type="button" name="submint" onclick="ganjilGenap()" value="Ganjil/Genap">
+        <!-- xxxx ini tombol untuk function javascript xxxxx -->
+    </form>
+</body>
+
+</html>
